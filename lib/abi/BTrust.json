@@ -1,0 +1,39 @@
+{
+  "abi": [
+    {
+      "type": "function",
+      "name": "createRequest",
+      "inputs": [{ "name": "description", "type": "string" }, { "name": "amountWei", "type": "uint256" }],
+      "outputs": [],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "type": "function",
+      "name": "castVote",
+      "inputs": [{ "name": "requestId", "type": "uint256" }, { "name": "support", "type": "bool" }],
+      "outputs": [],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "type": "function",
+      "name": "finalize",
+      "inputs": [{ "name": "requestId", "type": "uint256" }, { "name": "approve", "type": "bool" }],
+      "outputs": [],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "type": "function",
+      "name": "getRequest",
+      "inputs": [{ "name": "requestId", "type": "uint256" }],
+      "outputs": [
+        { "name": "description", "type": "string" },
+        { "name": "amountWei", "type": "uint256" },
+        { "name": "requester", "type": "address" },
+        { "name": "status", "type": "uint8" },
+        { "name": "yesCount", "type": "uint256" },
+        { "name": "noCount", "type": "uint256" }
+      ],
+      "stateMutability": "view"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+// prisma/schema.prisma
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  address     String   @id              // 0x... ความยาว 42 แต่ SQLite ไม่รองรับ @db.VarChar(42)
+  displayName String
+  email       String?
+  department  String?  // เช่น ฝ่ายทั่วไป/บัญชี/บริหาร หรือชื่อกลุ่มงาน
+  roleWanted  String?  // สิทธิ์ที่ต้องการในระบบ (optional)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
